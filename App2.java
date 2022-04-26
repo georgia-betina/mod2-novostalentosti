@@ -21,6 +21,8 @@ public class App2 {
         System.out.println(mamifero.hashCode());
 
         Animal animal2 = mamifero;
+        // CAST - Conversão
+        System.out.println(((Mamifero)animal2).isGeraLeite());
         System.out.println(animal2.getSexo());
         System.out.println(animal2.getClass());
         System.out.println(animal2.hashCode());
