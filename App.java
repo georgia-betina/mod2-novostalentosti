@@ -1,4 +1,6 @@
-package introducao;
+import introducao.Aplicativo;
+import introducao.Celular;
+import introducao.Pessoa;
 
 public class App {
     public static void main(String[] args) {
@@ -72,8 +74,8 @@ public class App {
         System.out.println(umApp);
     }
 
-    var app = new Aplicativo("");
-    app.nome = "lalala";
+    //var app = new Aplicativo("");
+    //app.nome = "lalala";
 
     }
 }

@@ -1,3 +1,5 @@
+package introducao.bichos;
+
 public class Mamifero extends Animal {
     private boolean geraLeite;
 
