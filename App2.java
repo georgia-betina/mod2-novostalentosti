@@ -1,6 +1,5 @@
-package intro_POO;
-
-import intro_POO.introducao.bichos.Animal;
+import introducao.bichos.Animal;
+import introducao.bichos.Mamifero;
 
 public class App2 {
     public static void main(String[] args) {

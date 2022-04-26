@@ -1,4 +1,4 @@
-package intro_POO;
+package introducao;
 
 public class App {
     public static void main(String[] args) {
