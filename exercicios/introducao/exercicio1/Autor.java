@@ -7,7 +7,8 @@ public class Autor {
     private Date dataNascimento;
 
     public Autor (String nome, Date dataNascimento) {
-        
+        this.nome = nome;
+        this.dataNascimento = dataNascimento;
     }
 
     public String getNome() {
