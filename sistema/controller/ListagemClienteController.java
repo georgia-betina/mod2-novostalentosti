@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
+import javax.swing.JComponent;
 import javax.swing.JOptionPane;
 
 public class ListagemClienteController implements ActionListener {
@@ -11,16 +12,16 @@ public class ListagemClienteController implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         // TODO Auto-generated method stub
-        JButton botaoClicado = (JButton)e.getSource();
+        JComponent botaoClicado = (JComponent)e.getSource();
         switch (botaoClicado.getName()) {
             case "btnNovo":
-            JOptionPane.showMessageDialog(null, "BOTAO NOVO");
+                btnNovoClique();
             break;
             case "btnAlterar":
-            JOptionPane.showMessageDialog(null, "BOTAO ALTERAR");
+                btnAlterarClique();
             break;
             case "btnExcluir":
-            JOptionPane.showMessageDialog(null, "BOTAO EXCLUIR");
+                btnExcluirClique();
             break;
             default:
             break;
@@ -28,4 +29,16 @@ public class ListagemClienteController implements ActionListener {
         JOptionPane.showMessageDialog(null, "Olá, mundo.");
     }
     
+
+    private void btnNovoClique(){
+        JOptionPane.showMessageDialog(null, "BOTAO NOVO");
+    }
+
+    private void btnAlterarClique(){
+        JOptionPane.showMessageDialog(null, "BOTAO ALTERAR");
+    }
+
+    private void btnExcluirClique(){
+        JOptionPane.showMessageDialog(null, "BOTAO EXCLUIR");
+    }
 }
