@@ -5,6 +5,15 @@ import java.util.Date;
 public class Autor {
     private String nome;
     private Date dataNascimento;
+    private Livro livro;
+
+    public Livro getLivro() {
+        return livro;
+    }
+
+    public void setLivro(Livro livro) {
+        this.livro = livro;
+    }
 
     public Autor (String nome, Date dataNascimento) {
         this.nome = nome;
