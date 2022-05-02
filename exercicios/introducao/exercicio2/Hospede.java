@@ -1,14 +1,25 @@
 package exercicios.introducao.exercicio2;
 
+import java.util.ArrayList;
+
 public class Hospede {
     private String nome;
     private String cpf;
     private String telefone;
+    private ArrayList<Reserva> listaReservas = new ArrayList<>();
+
+    public ArrayList<Reserva> getListaReservas() {
+        return listaReservas;
+    }
+
+    public void setListaReservas(ArrayList<Reserva> listaReservas) {
+        this.listaReservas = listaReservas;
+    }
 
     public Hospede(String cpf) {
         this.cpf = cpf;
     }
-    
+
     public String getNome() {
         return nome;
     }

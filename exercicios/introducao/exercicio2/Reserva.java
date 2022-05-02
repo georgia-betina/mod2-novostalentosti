@@ -1,12 +1,31 @@
 package exercicios.introducao.exercicio2;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Reserva {
     private int numero;
     private Date dataInicial;
     private Date dataFinal;
-    
+    private Quarto quarto;
+    private ArrayList<Hospede> listaHospedes = new ArrayList<>();
+
+    public ArrayList<Hospede> getListaHospedes() {
+        return listaHospedes;
+    }
+
+    public void setListaHospedes(ArrayList<Hospede> listaHospedes) {
+        this.listaHospedes = listaHospedes;
+    }
+
+    public Quarto getQuarto() {
+        return quarto;
+    }
+
+    public void setQuarto(Quarto quarto) {
+        this.quarto = quarto;
+    }
+
     public Reserva(int numero) {
         this.numero = numero;
     }
@@ -38,13 +57,17 @@ public class Reserva {
     public String toString() {
         StringBuilder montadorString = new StringBuilder();
         montadorString.append("Hóspede: ");
-        montadorString.append();
-        montadorString.append("Número da reserva: ");
+        montadorString.append(getListaHospedes());
+        montadorString.append("\nNúmero de telefone: ");
+        montadorString.append("\nNúmero do CPF: ");
+        montadorString.append("\nNúmero da reserva: ");
         montadorString.append(numero);
-        montadorString.append("Data inicial: ");
+        montadorString.append("\nData inicial: ");
         montadorString.append(dataInicial);
         montadorString.append("Data final: ");
         montadorString.append(dataFinal);
+        montadorString.append("Quarto reservado: ");
+        montadorString.append(getQuarto());
 
 
         return montadorString.toString();
