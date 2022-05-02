@@ -39,8 +39,22 @@ public class Livro {
 
     @Override
     public String toString() {
-        return "Livro \"" + titulo + "\"\n" + "Autor(a): " + escritor + "\nEstoque: " + esgotado + "\n" + "Valor: R$ "
-                + valor;
+        /*return "Livro \"" + titulo + "\"\n" + "Autor(a): " + getEscritor().getNome() + " | Data de nascimento: " + getEscritor().getDataNascimento() + "\nEstoque: " + esgotado + "\n" + "Valor: R$ "
+                + valor;*/
+        StringBuilder montadorString = new StringBuilder();
+
+            montadorString.append("Título: ");
+            montadorString.append(getTitulo());
+            montadorString.append("Valor: R$ ");
+            montadorString.append(getValor());
+            montadorString.append("Esgotado: ");
+            montadorString.append(getEsgotado());
+            montadorString.append("Autor(a): ");
+            montadorString.append(escritor.getNome());
+            montadorString.append("Data de nascimento: ");
+            montadorString.append(escritor.getDataNascimento());
+            
+        return montadorString.toString();
     }
 
     
