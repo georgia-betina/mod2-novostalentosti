@@ -3,7 +3,12 @@ package exercicios.introducao.exercicio4;
 public class EmpresaCliente {
     private String nomeDaEmpresa;
     private String ramo;
-    
+
+    public EmpresaCliente (String nomeDaEmpresa, String ramo) {
+        this.nomeDaEmpresa = nomeDaEmpresa;
+        this.ramo = ramo;
+    }
+
     public String getNomeDaEmpresa() {
         return nomeDaEmpresa;
     }

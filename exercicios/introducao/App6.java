@@ -37,5 +37,7 @@ public class App6 {
         produto2.setId(1002);
         produto2.setNome("Xbox Series X");
         produto2.setValor(5000f);
+
+        
     }
 }
