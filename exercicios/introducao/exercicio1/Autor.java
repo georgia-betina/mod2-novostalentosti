@@ -1,23 +1,27 @@
 package exercicios.introducao.exercicio1;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Autor {
     private String nome;
     private Date dataNascimento;
-    private Livro livro;
+    private ArrayList<Livro>listaLivros = new ArrayList<>();
 
-    public Livro getLivro() {
-        return livro;
+    public ArrayList<Livro> getListaLivros() {
+        return listaLivros;
     }
 
-    public void setLivro(Livro livro) {
-        this.livro = livro;
+    public void setListaLivros(ArrayList<Livro> listaLivros) {
+        this.listaLivros = listaLivros;
     }
 
     public Autor (String nome, Date dataNascimento) {
         this.nome = nome;
         this.dataNascimento = dataNascimento;
+    }
+
+    public Autor(String nome2, String string) {
     }
 
     public String getNome() {

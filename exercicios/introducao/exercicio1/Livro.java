@@ -1,16 +1,17 @@
 package exercicios.introducao.exercicio1;
 
-import java.util.ArrayList;
-
 public class Livro {
     private String titulo;
     private Float valor;
     private Boolean esgotado;
+    private Autor escritor;
 
-    private ArrayList<Autor> listaEscritor = new ArrayList<>();
+    public Autor getEscritor() {
+        return escritor;
+    }
 
-    public ArrayList<Autor> getListaEscritor() {
-        return listaEscritor;
+    public void setEscritor(Autor escritor) {
+        this.escritor = escritor;
     }
 
     public Livro(String titulo) {
@@ -38,8 +39,8 @@ public class Livro {
 
     @Override
     public String toString() {
-        return "Livro [esgotado=" + esgotado + ", listaEscritor=" + listaEscritor + ", titulo=" + titulo + ", valor="
-                + valor + "]";
+        return "Livro \"" + titulo + "\"\n" + "Autor(a): " + escritor + "\nEstoque: " + esgotado + "\n" + "Valor: R$ "
+                + valor;
     }
 
     
