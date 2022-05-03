@@ -12,6 +12,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
 import sistema.controller.ListagemClienteController;
+import sistema.model.TabelaClienteModel;
 
 public class ListagemCliente extends JFrame {
 
@@ -25,7 +26,8 @@ public class ListagemCliente extends JFrame {
     private JButton btnExcluir = new JButton("Excluir");
 
     /* === TABELA === */
-    private JTable tabela = new JTable();
+    private TabelaClienteModel tabelaModel = new TabelaClienteModel();
+    private JTable tabela = new JTable(tabelaModel);
 
     /* === CONTROLADOR DA TELA === */
     private ListagemClienteController controller = new ListagemClienteController();
