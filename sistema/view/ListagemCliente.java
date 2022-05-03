@@ -35,6 +35,7 @@ public class ListagemCliente extends JFrame {
         JPanel painel = new JPanel();
         add(painel,"Center");
         setSize(500,400);
+        setTitle("Listagem de Clientes");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         criaPaineis(); // chama o método
         setVisible(true);
