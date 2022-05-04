@@ -78,6 +78,13 @@ public class Reserva {
             montadorString.append("\nHóspede - CPF: " + umHospede.getCpf());
         }
 
+        /*
+        for (Hospede umHospede : listaHospedes){
+            montadorString.append("\nHóspede - Nome: " + umHospede.getNome());
+            montadorString.append("\nHóspede - Telefone: " + umHospede.getTelefone());
+            montadorString.append("\nHóspede - CPF: " + umHospede.getCpf());
+        }
+        */
 
         return montadorString.toString();
     }
