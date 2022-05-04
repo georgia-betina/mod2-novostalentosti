@@ -1,5 +1,6 @@
 package exercicios.introducao.exercicio2;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -55,19 +56,27 @@ public class Reserva {
     }
 
     public String toString() {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         StringBuilder montadorString = new StringBuilder();
         montadorString.append("Hóspede: ");
         montadorString.append(getListaHospedes());
         montadorString.append("\nNúmero de telefone: ");
         montadorString.append("\nNúmero do CPF: ");
-        montadorString.append("\nNúmero da reserva: ");
-        montadorString.append(numero);
-        montadorString.append("\nData inicial: ");
-        montadorString.append(dataInicial);
-        montadorString.append("Data final: ");
-        montadorString.append(dataFinal);
+        montadorString.append(String.format("\nNúmero da reserva: %d", numero));
+        //montadorString.append(numero);
+        montadorString.append(String.format("\nData inicial: %d", sdf.format(dataInicial)));
+        //montadorString.append(dataInicial);
+        montadorString.append(String.format("Data final: %d", sdf.format(dataFinal)));
+        //montadorString.append(dataFinal);
         montadorString.append("Quarto reservado: ");
-        montadorString.append(getQuarto());
+        montadorString.append(quarto.getNumero());
+
+        for (int i = 0; i < listaHospedes.size(); i++) {
+            Hospede umHospede = listaHospedes.get(i);
+            montadorString.append("\nHóspede - Nome: " + umHospede.getNome());
+            montadorString.append("\nHóspede - Telefone: " + umHospede.getTelefone());
+            montadorString.append("\nHóspede - CPF: " + umHospede.getCpf());
+        }
 
 
         return montadorString.toString();
