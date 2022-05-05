@@ -42,8 +42,10 @@ public class Pedido {
     }
 
     public float calcValorTotal() {
-        return 0f;
+        float valorTotal = 0;
+        for (ItemPedido iPedido : listaItens) {
+            valorTotal = iPedido.getValorVenda() * iPedido.getQuantidade();
+        }
+        return valorTotal;
     }
-
-
 }
