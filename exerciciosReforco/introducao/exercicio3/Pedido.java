@@ -44,7 +44,8 @@ public class Pedido {
     public float calcValorTotal() {
         float valorTotal = 0;
         for (ItemPedido iPedido : listaItens) {
-            valorTotal = iPedido.getValorVenda() * iPedido.getQuantidade();
+            float calculaValor = iPedido.getValorVenda() * (float)iPedido.getQuantidade();
+            calculaValor = valorTotal;
         }
         return valorTotal;
     }

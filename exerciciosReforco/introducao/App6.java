@@ -51,6 +51,5 @@ public class App6 {
         }
 
         System.out.println(pedido1.calcValorTotal());
-        //System.out.println(Pedido.calcValorTotal);
     }
 }
