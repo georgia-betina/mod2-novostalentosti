@@ -1,6 +1,8 @@
 package exercicios.introducao;
 
-import java.util.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+//import java.util.Date;
 
 import exercicios.introducao.exercicio2.Hospede;
 import exercicios.introducao.exercicio2.Quarto;
@@ -8,6 +10,8 @@ import exercicios.introducao.exercicio2.Reserva;
 
 public class App5 {
     public static void main(String[] args) {
+        SimpleDateFormat dataFormatada = new SimpleDateFormat("dd/MM/yyyy");
+
         Hospede pessoa1 = new Hospede("111.111.111-11");
         pessoa1.setNome("Zezinho");
         pessoa1.setTelefone("5555-1234");
@@ -17,8 +21,12 @@ public class App5 {
         pessoa2.setTelefone("5555-4321");
 
         Reserva reserva1 = new Reserva(1001);
-        reserva1.setDataInicial(new Date(2022,04,28));
-        reserva1.setDataFinal(new Date(2022,05,05));
+        try {
+            reserva1.setDataInicial(dataFormatada.parse("28/04/2022"));
+            reserva1.setDataFinal(dataFormatada.parse("05/05/2022"));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
 
         Quarto quarto1 = new Quarto();
         quarto1.setNumero(100);
@@ -45,8 +53,13 @@ public class App5 {
         quarto2.setNumero(200);
 
         Reserva reserva2 = new Reserva(1002);
-        reserva2.setDataInicial(new Date(2022,04,21));
-        reserva2.setDataFinal(new Date(2022,04,28));
+        try {
+            reserva2.setDataInicial(dataFormatada.parse("21/04/2022"));
+            reserva2.setDataFinal(dataFormatada.parse("28/04/2022"));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
         reserva2.setQuarto(quarto2);
         reserva2.getListaHospedes().add(pessoa3);
         reserva2.getListaHospedes().add(pessoa4);

@@ -1,6 +1,8 @@
 package exercicios.introducao;
 
-import java.util.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+//import java.util.Date;
 
 import exercicios.introducao.exercicio3.Comprador;
 import exercicios.introducao.exercicio3.ItemPedido;
@@ -9,6 +11,8 @@ import exercicios.introducao.exercicio3.Produto;
 
 public class App6 {
     public static void main(String[] args) {
+        SimpleDateFormat dataFormatada = new SimpleDateFormat("dd/MM/yyyy");
+
         Comprador zezinho = new Comprador();
         zezinho.setId(300);
         zezinho.setNome("Zezinho da Silva");
@@ -16,7 +20,11 @@ public class App6 {
 
         Pedido pedido1 = new Pedido();
         pedido1.setId(1);
-        pedido1.setData(new Date(2022,04,29));
+        try {
+            pedido1.setData(dataFormatada.parse("29/04/2022"));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
 
         ItemPedido item1 = new ItemPedido();
         item1.setId(1);
@@ -37,7 +45,5 @@ public class App6 {
         produto2.setId(1002);
         produto2.setNome("Xbox Series X");
         produto2.setValor(5000f);
-
-        
     }
 }
