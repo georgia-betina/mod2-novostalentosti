@@ -50,6 +50,7 @@ public class App6 {
             e.printStackTrace();
         }
 
-        System.out.println(pedido1.calcValorTotal());
+        var resultado = pedido1.calcValorTotal();
+        System.out.println(String.format("O total do pedido é R$ %.2f", resultado));
     }
 }

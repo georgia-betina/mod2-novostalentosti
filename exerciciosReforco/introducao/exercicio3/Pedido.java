@@ -3,6 +3,8 @@ package exerciciosReforco.introducao.exercicio3;
 import java.util.ArrayList;
 import java.util.Date;
 
+import javax.sound.sampled.SourceDataLine;
+
 public class Pedido {
     private long id;
     private Date data;
@@ -44,8 +46,9 @@ public class Pedido {
     public float calcValorTotal() {
         float valorTotal = 0;
         for (ItemPedido iPedido : listaItens) {
-            float calculaValor = iPedido.getValorVenda() * (float)iPedido.getQuantidade();
-            calculaValor = valorTotal;
+            System.out.println(iPedido.getId());
+            var valorItem = iPedido.getQuantidade();
+            valorTotal += valorItem;
         }
         return valorTotal;
     }
