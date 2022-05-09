@@ -3,8 +3,6 @@ package exerciciosReforco.introducao.exercicio3;
 import java.util.ArrayList;
 import java.util.Date;
 
-import javax.sound.sampled.SourceDataLine;
-
 public class Pedido {
     private long id;
     private Date data;
