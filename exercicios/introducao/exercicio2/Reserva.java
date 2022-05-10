@@ -1,5 +1,6 @@
 package exercicios.introducao.exercicio2;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -46,7 +47,9 @@ public class Reserva {
     }
 
     public String toString() {
+        SimpleDateFormat dataFormatada = new SimpleDateFormat("dd/MM/yyyy");
         StringBuilder montadorString = new StringBuilder();
+        montadorString.append("Número da reserva: %d\nData inicial da reserva: %s\nData final da reserva: %s", numero, dataFormatada.format(dataInicial), dataFormatada.format(dataFinal));
         return montadorString.toString();
     }
 }
