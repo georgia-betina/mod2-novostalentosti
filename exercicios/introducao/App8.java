@@ -47,11 +47,11 @@ public class App8 {
         agendamento1.setId(001);
         try {
             agendamento1.setData(dataFormatada.parse("10/05/2022 18:20"));
+            agendamento1.setPaciente(paciente1);
+            agendamento1.setMedico(medico1);
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        agendamento1.setPaciente(paciente1);
-        agendamento1.setMedico(medico1);
         Agendamento agendamento2 = new Agendamento();
         agendamento2.setId(002);
         try {
@@ -77,6 +77,14 @@ public class App8 {
         } catch (ParseException e) {
             e.printStackTrace();
         }
+        agendamento4.setPaciente(paciente4);
+        agendamento4.setMedico(medico2);
+
+        agenda1.getListaAgendamentos().add(agendamento1);
+        agenda1.getListaAgendamentos().add(agendamento3);
+
+        agenda2.getListaAgendamentos().add(agendamento2);
+        agenda2.getListaAgendamentos().add(agendamento4);
         
         agenda1.imprimirAgenda();
         agenda2.imprimirAgenda();
