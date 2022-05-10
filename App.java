@@ -76,6 +76,5 @@ public class App {
 
     //var app = new Aplicativo("");
     //app.nome = "lalala";
-    // TODO DASDAS
     }
 }

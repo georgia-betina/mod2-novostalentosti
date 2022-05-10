@@ -10,7 +10,6 @@ public class ListagemClienteController implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        // TODO Auto-generated method stub
         JComponent botaoClicado = (JComponent)e.getSource();
         switch (botaoClicado.getName()) {
             case "btnNovo":
