@@ -1,6 +1,6 @@
 package exercicios.introducao.exercicio4;
 
-public class EmpresaCliente {
+public class EmpresaCliente extends PessoaJuridica {
     private String nomeDaEmpresa;
     private String ramo;
 

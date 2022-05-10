@@ -1,6 +1,6 @@
 package exercicios.introducao.exercicio4;
 
-public class Funcionario {
+public class Funcionario extends PessoaFisica {
     private String nome;
     private String cargo;
 
