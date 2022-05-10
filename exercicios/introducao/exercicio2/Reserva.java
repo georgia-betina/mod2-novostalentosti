@@ -9,6 +9,7 @@ public class Reserva {
     private Date dataInicial;
     private Date dataFinal;
     private ArrayList<Hospede> listaHospedes = new ArrayList<>();
+    private Quarto quarto;
 
     public Reserva(int numero){
         this.numero = numero;
@@ -46,10 +47,26 @@ public class Reserva {
         this.listaHospedes = listaHospedes;
     }
 
+    public Quarto getQuarto() {
+        return quarto;
+    }
+
+    public void setQuarto(Quarto quarto) {
+        this.quarto = quarto;
+    }
+
     public String toString() {
         SimpleDateFormat dataFormatada = new SimpleDateFormat("dd/MM/yyyy");
         StringBuilder montadorString = new StringBuilder();
-        montadorString.append("Número da reserva: %d\nData inicial da reserva: %s\nData final da reserva: %s", numero, dataFormatada.format(dataInicial), dataFormatada.format(dataFinal));
+
+        montadorString.append(String.format("\nNúmero da reserva: %d\nData inicial da reserva: %s\nData final da reserva: %s\n", numero, dataFormatada.format(dataInicial), dataFormatada.format(dataFinal)));
+        for (Hospede hospede : listaHospedes) {
+            montadorString.append(String.format("\nNome do hóspede: %s", hospede.getNome()));
+            montadorString.append(String.format("\nCPF: %s", hospede.getCpf()));
+            montadorString.append(String.format("\nTelefone: %s", hospede.getTelefone()));
+        }
+        montadorString.append(String.format("\nQuarto: %d", quarto.getNumero()));
+        
         return montadorString.toString();
     }
 }

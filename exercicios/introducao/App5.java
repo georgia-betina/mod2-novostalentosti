@@ -64,5 +64,7 @@ public class App5 {
         reserva2.getListaHospedes().add(pessoa3);
         reserva2.getListaHospedes().add(pessoa4);
         reserva2.getListaHospedes().add(pessoa5);
+
+        System.out.println(reserva2.toString());
     }
 }
