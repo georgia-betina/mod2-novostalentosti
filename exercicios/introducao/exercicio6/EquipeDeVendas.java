@@ -20,6 +20,11 @@ public class EquipeDeVendas {
     }
 
     public String listarEquipe(){
-        return "";
+        StringBuilder montadorString = new StringBuilder();
+        montadorString.append(String.format("\n\nDados do gerente:\nNome do gerente: %s\nID do gerente: %d\nSetor: %s\nTelefone: %s", getGestor().getNome(), getGestor().getId(), getGestor().getSetor(), getGestor().getTelefone()));
+        for (Vendedor vendedor : listaVendedores) {
+            montadorString.append(String.format("\n\nDados do vendedor:\nNome do vendedor: %s\nID do vendedor: %d\nTelefone: %s\nMeta de vendas: %.0f\nPercentual de comissão: %.0f%%", vendedor.getNome(), vendedor.getId(), vendedor.getTelefone(), vendedor.getMetaVendas(), vendedor.getPercComissao()));
+        }
+        return montadorString.toString();
     }
 }

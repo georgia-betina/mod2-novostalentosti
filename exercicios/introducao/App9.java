@@ -59,7 +59,7 @@ public class App9 {
         equipe2.getListaVendedores().add(vendedor4);
         equipe2.getListaVendedores().add(vendedor5);
 
-        equipe1.listarEquipe();
-        equipe2.listarEquipe();
+        System.out.println(equipe1.listarEquipe());
+        System.out.println(equipe2.listarEquipe());
     }
 }
