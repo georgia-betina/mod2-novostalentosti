@@ -25,12 +25,12 @@ public class ListagemCliente extends JFrame {
     private JButton btnAlterar = new JButton("Alterar");
     private JButton btnExcluir = new JButton("Excluir");
 
-    /* === TABELA === */
-    private TabelaClienteModel tabelaModel = new TabelaClienteModel();
-    private JTable tabela = new JTable(tabelaModel);
-
     /* === CONTROLADOR DA TELA === */
     private ListagemClienteController controller = new ListagemClienteController();
+
+    /* === TABELA === */
+    private TabelaClienteModel tabelaModel = new TabelaClienteModel(controller);
+    private JTable tabela = new JTable(tabelaModel);
 
     public ListagemCliente() {
         // PAINEL
