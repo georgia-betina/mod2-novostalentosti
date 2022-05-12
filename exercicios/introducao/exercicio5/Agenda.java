@@ -44,7 +44,7 @@ public class Agenda {
         
             montadorString.append(String.format("\nID do médico: %d\nNome do médico: %s\nCRM: %s", getMedico().getId(), getMedico().getNome(), getMedico().getCRM()));
 
-            System.out.printf("\n\nDados da agenda %d:\n%s", i, montadorString);
+            System.out.printf("\n\nDados da agenda %d:\nMédico: %s\n%s", i, getMedico().getNome(), montadorString);
         }
     }
 }
