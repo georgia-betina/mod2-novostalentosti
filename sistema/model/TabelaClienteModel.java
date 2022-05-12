@@ -41,7 +41,6 @@ public class TabelaClienteModel extends AbstractTableModel {
 
     @Override
     public String getColumnName(int column) {
-        // TODO Auto-generated method stub
         return new String[]{"Código", "Nome", "CPF", "Data Nascimento"}[column];
     }
     
