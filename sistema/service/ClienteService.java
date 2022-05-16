@@ -3,10 +3,10 @@ package sistema.service;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.List;
+//import java.util.List;
 import sistema.entity.Cliente;
 
-public class ClienteService {
+public class ClienteService { // gerencia as entidades
     private ArrayList<Cliente> listaClientes = new ArrayList<>();
 
     public ClienteService(){
@@ -47,5 +47,10 @@ public class ClienteService {
 
     public ArrayList<Cliente> getAllClientes(){
         return listaClientes;
+    }
+
+    public Cliente save (Cliente cliente) {
+        listaClientes.add(cliente);
+        return cliente;
     }
 }

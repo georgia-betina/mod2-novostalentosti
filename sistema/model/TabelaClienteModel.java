@@ -1,5 +1,7 @@
 package sistema.model;
 
+import java.text.SimpleDateFormat;
+
 import javax.swing.table.AbstractTableModel;
 
 import sistema.controller.ListagemClienteController;
@@ -29,11 +31,16 @@ public class TabelaClienteModel extends AbstractTableModel {
         //     return "Nao acredito";
         // }
         var umCliente = controller.getAllClientes().get(rowIndex);
+        SimpleDateFormat dataFormatada = new SimpleDateFormat("dd/MM/yyyy");
         switch (columnIndex) {
             case 0:
                 return umCliente.getId();
             case 1:
                 return umCliente.getNome();
+            case 2:
+                return umCliente.getCpf();
+            case 3:
+                return dataFormatada.format(umCliente.getDataNascimento());
             default:
                 return "";
         }
