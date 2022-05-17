@@ -1,2 +1,1 @@
-# mod2-novostalentosti
-Aula e exercícios de POO - Programação Orientada a Objetos
+# Módulo 2 - Desenvolvimento das competências iniciais para desenvolvedores
