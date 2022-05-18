@@ -43,6 +43,10 @@ public class ListagemCliente extends JFrame {
         setVisible(true);
     }
 
+    public void atualizaTabela(){
+        tabelaModel.fireTableDataChanged();
+    }
+
     private void criaPaineis(){
         jpnSul.setLayout(new FlowLayout(FlowLayout.LEFT));
         

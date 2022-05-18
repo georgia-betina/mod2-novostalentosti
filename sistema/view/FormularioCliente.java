@@ -9,6 +9,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.text.MaskFormatter;
 
+import sistema.controller.FormularioClienteController;
 import sistema.entity.Cliente;
 
 import java.awt.*;
@@ -34,7 +35,21 @@ public class FormularioCliente  extends JDialog{
     private MaskFormatter mascaraCPF;
     private MaskFormatter mascaraData;
     private JTextField txtDataNascimento = new JTextField(8);
-    public FormularioCliente() {
+    private Cliente cliente = new Cliente();
+    private FormularioClienteController controller = new FormularioClienteController(this);
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
+    public FormularioCliente(Cliente cliente) {
+
+        this.cliente = cliente;
+
         setSize(400,300);
         setModal(true);
         criaPaineis();
@@ -43,9 +58,12 @@ public class FormularioCliente  extends JDialog{
 
     private void criaPaineis(){
         add(jpnBotao,"South");
+        btnOK.addActionListener(controller);
+        btnCancelar.addActionListener(controller);
         jpnBotao.add(btnOK);
         jpnBotao.add(btnCancelar);
-
+        btnOK.setName("btnOK");
+        btnCancelar.setName("btnCancelar");
         add(jpnCentro, "Center");
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 0;
@@ -98,7 +116,7 @@ public class FormularioCliente  extends JDialog{
 
         try {
             mascaraData = new MaskFormatter("##/##/####");
-            txtCPF = new JFormattedTextField(mascaraData);
+            txtDataNascimento = new JFormattedTextField(mascaraData);
         } catch (ParseException e) {
             e.printStackTrace();
         }
