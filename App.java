@@ -1,6 +1,7 @@
 import introducao.Aplicativo;
 import introducao.Celular;
 import introducao.Pessoa;
+import static introducao.Pessoa.mostraRaca;
 
 public class App {
     public static void main(String[] args) {
@@ -15,11 +16,18 @@ public class App {
     zezinho.setCPF("555.555.555-55");
     zezinho.setAltura(1.75f);
     zezinho.setIdade(22);
+    zezinho.setRaca("A");
 
     Pessoa luizinho = new Pessoa("Luiz");
     luizinho.setNome("Luizinho da Silva Sauro Jr");
     luizinho.setAltura(1.68f);
     luizinho.setIdade(17);
+    // variável de escopo de instância
+    luizinho.setRaca("B");
+    System.out.println(zezinho.getNome() + "Raça: " + zezinho.getRaca());
+    System.out.println(luizinho.getNome() + "Raça: " + luizinho.getRaca());
+    zezinho.mostraRaca();
+    Pessoa.mostraRaca();
 
     System.out.println(zezinho.getNome());
     System.out.println(luizinho.getNome());
