@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JComponent;
 import javax.swing.JOptionPane;
 
+import sistema.entity.Cliente;
 import sistema.view.FormularioCliente;
 
 public class FormularioClienteController implements ActionListener {
