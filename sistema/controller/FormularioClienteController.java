@@ -37,8 +37,6 @@ public class FormularioClienteController
             var cliente = formCliente.getCliente();
             formCliente.atualiza(cliente);
             validador(cliente);
-        }catch (NumberFormatException e){
-            JOptionPane.showMessageDialog(null, "Campo numérico não informado");
         } catch (ValorInvalidoException e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
             e.printStackTrace();
