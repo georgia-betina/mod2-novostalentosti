@@ -149,7 +149,7 @@ public class FormularioCliente  extends JDialog{
         try {
             cliente.setDataNascimento(dataFormatada.parse(txtDataNascimento.getText()));
         } catch (ParseException e) {
-            e.printStackTrace();
+            throw new ValorInvalidoException("Valor de data inválido", e, "DATA NASCIMENTO");
         }
         return cliente;
     }
