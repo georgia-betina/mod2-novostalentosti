@@ -2,34 +2,51 @@ package sistema.controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.JComponent;
 import javax.swing.JOptionPane;
 
 import sistema.entity.Cliente;
+import sistema.exception.ValorInvalidoException;
 import sistema.view.FormularioCliente;
 
-public class FormularioClienteController implements ActionListener {
+
+public class FormularioClienteController 
+                implements ActionListener{
 
     private FormularioCliente formCliente;
 
     public FormularioClienteController(FormularioCliente formCliente) {
         this.formCliente = formCliente;
     }
-
     @Override
     public void actionPerformed(ActionEvent e) {
         JComponent botaoClicado = (JComponent) e.getSource();
-        if (botaoClicado.getName().equals("btnOK")){
-            btnClique();
+        if(botaoClicado.getName().equals("btnOK")){
+            btnOKClique();
+        }else{
+            if(botaoClicado.getName().equals("btnCancelar")){
+                btnCancelarClique();
+            }
         }
-        JOptionPane.showMessageDialog(null, "message");
     }
-
-    private void btnClique() {
-        var cliente = formCliente.getCliente();
-        formCliente.atualiza(cliente);
+    private void btnCancelarClique() {
         formCliente.dispose();
+    }
+    private void btnOKClique() {
+        try{
+            var cliente = formCliente.getCliente();
+            formCliente.atualiza(cliente);
+            validador(cliente);
+        }catch (NumberFormatException e){
+            JOptionPane.showMessageDialog(null, "Campo numérico não informado");
+        } catch (ValorInvalidoException e) {
+            e.printStackTrace();
+        }
+    }
+    private void validador(Cliente cliente) throws ValorInvalidoException {
+        if(cliente.getNome() == null || cliente.getNome().isEmpty()){
+            throw new ValorInvalidoException("O nome não pode ser deixado em branco", null, "NOME");
+        }
     }
     
 }
