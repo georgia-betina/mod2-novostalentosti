@@ -10,6 +10,7 @@ public class TabelaClienteModel extends AbstractTableModel {
     // Classe abstrata: junção de uma classe com uma interface
 
     private ListagemClienteController controller;
+    private SimpleDateFormat dataFormatada = new SimpleDateFormat("dd/MM/yyyy");
 
     public TabelaClienteModel(ListagemClienteController controller) {
         this.controller = controller;
@@ -31,9 +32,8 @@ public class TabelaClienteModel extends AbstractTableModel {
         //     return "Nao acredito";
         // }
         var umCliente = controller.getAllClientes().get(rowIndex);
-        SimpleDateFormat dataFormatada = new SimpleDateFormat("dd/MM/yyyy");
         switch (columnIndex) {
-            case 0:
+            case 0: 
                 return umCliente.getId();
             case 1:
                 return umCliente.getNome();

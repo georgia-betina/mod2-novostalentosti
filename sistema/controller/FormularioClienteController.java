@@ -10,14 +10,14 @@ import sistema.exception.ValorInvalidoException;
 import sistema.view.FormularioCliente;
 
 
-public class FormularioClienteController 
-                implements ActionListener{
+public class FormularioClienteController implements ActionListener{
 
     private FormularioCliente formCliente;
 
     public FormularioClienteController(FormularioCliente formCliente) {
         this.formCliente = formCliente;
     }
+
     @Override
     public void actionPerformed(ActionEvent e) {
         JComponent botaoClicado = (JComponent) e.getSource();
@@ -29,23 +29,26 @@ public class FormularioClienteController
             }
         }
     }
+
     private void btnCancelarClique() {
         formCliente.dispose();
     }
+
     private void btnOKClique() {
         try{
             var cliente = formCliente.getCliente();
             formCliente.atualiza(cliente);
             validador(cliente);
+            formCliente.dispose();
         } catch (ValorInvalidoException e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
             e.printStackTrace();
         }
     }
+
     private void validador(Cliente cliente) throws ValorInvalidoException {
         if(cliente.getNome() == null || cliente.getNome().isEmpty()){
             throw new ValorInvalidoException("O nome não pode ser deixado em branco", null, "NOME");
         }
     }
-    
 }
