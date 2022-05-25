@@ -11,6 +11,7 @@ import javax.swing.text.MaskFormatter;
 
 import sistema.controller.FormularioClienteController;
 import sistema.entity.Cliente;
+import sistema.exception.ValorInvalidoException;
 
 import java.awt.*;
 import java.text.ParseException;
@@ -136,8 +137,12 @@ public class FormularioCliente  extends JDialog{
         jpnCentro.add(txtDataNascimento, c);
     }
 
-    public Cliente atualiza(Cliente cliente) {
-        cliente.setId(Long.parseLong(txtId.getText()));
+    public Cliente atualiza(Cliente cliente) throws ValorInvalidoException {
+        try {
+            cliente.setId(Long.parseLong(txtId.getText()));
+        } catch (NumberFormatException e) {
+            throw new ValorInvalidoException("Campo código deve conter números.", e, "CÓDIGO");
+        }
         cliente.setNome(txtNome.getName());
         cliente.setCpf(txtCPF.getText());
         SimpleDateFormat dataFormatada = new SimpleDateFormat("dd/MM/yyyy");

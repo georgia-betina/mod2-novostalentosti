@@ -40,6 +40,7 @@ public class FormularioClienteController
         }catch (NumberFormatException e){
             JOptionPane.showMessageDialog(null, "Campo numérico não informado");
         } catch (ValorInvalidoException e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
             e.printStackTrace();
         }
     }
