@@ -22,7 +22,7 @@ public class Cidade {
         final String contaApartamentos = "Apartamento";
         int quantidadeApartamentos = 0;
         for (Municipe umMunicipe : listaMunicipes) {
-            TipoResidencia tipoDaResidencia = umMunicipe.getTipo();
+            String tipoDaResidencia = umMunicipe.getTipo().getNome();
             if (tipoDaResidencia.equals(contaApartamentos)) {
                 quantidadeApartamentos++;
             }
@@ -31,7 +31,15 @@ public class Cidade {
     }
 
     public int contaCasas() {
-        return 0;
+        final String contaCasas = "Casa";
+        int quantidadeCasas = 0;
+        for (Municipe umMunicipe : listaMunicipes) {
+            String tipoDaResidencia = umMunicipe.getTipo().getNome();
+            if (tipoDaResidencia.equals(contaCasas)) {
+                quantidadeCasas++;
+            }
+        }
+        return quantidadeCasas;
     }
 
     public static void main(String[] args) {
