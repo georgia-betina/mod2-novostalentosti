@@ -19,20 +19,43 @@ public class Turma {
     }
 
     public int contaMeninos() {
-        return 0;
+        int somaMeninos = 0;
+        final String sexoM = "Masculino";
+        for (Crianca umaCrianca : listaCriancas) {
+            if (umaCrianca.getSexo().equals(sexoM) == true) {
+                somaMeninos++;
+            }
+        }
+        return somaMeninos;
     }
 
     public int contaMeninas() {
-        int somaMeninas = 0;
-        for (Crianca umaCrianca : listaCriancas) {
-            if (umaCrianca.getSexo().equals("F") || umaCrianca.getSexo().equals("feminino")  || umaCrianca.getSexo().equals("Feminino") || umaCrianca.getSexo().equals("menina") || umaCrianca.getSexo().equals("Menina")) {
-                somaMeninas++;
-            }
-        }
-        return somaMeninas;
+        return 0;
     }
 
     public static void main(String[] args) {
-        
+        Turma turma1 = new Turma();
+        turma1.setSerie("5 série");
+        Crianca crianca1 = new Crianca();
+        crianca1.setNome("Zezinho");
+        crianca1.setSexo("Masculino");
+        Crianca crianca2 = new Crianca();
+        crianca2.setNome("Mariazinha");
+        crianca1.setSexo("Feminino");
+        Crianca crianca3 = new Crianca();
+        crianca3.setNome("Aninha");
+        crianca3.setSexo("Feminino");
+        Crianca crianca4 = new Crianca();
+        crianca4.setNome("Julinha");
+        crianca4.setSexo("Feminino");
+        turma1.getListaCriancas().add(crianca1);
+        turma1.getListaCriancas().add(crianca2);
+        turma1.getListaCriancas().add(crianca3);
+        turma1.getListaCriancas().add(crianca4);
+
+        int quantidadeMeninos = turma1.contaMeninos();
+        int quantidadeMeninas = turma1.contaMeninas();
+
+        System.out.printf("A quantidade de meninos é %d e a de meninas é %d.", quantidadeMeninos, quantidadeMeninas);
     }
 }
