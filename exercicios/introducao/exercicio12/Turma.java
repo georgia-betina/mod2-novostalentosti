@@ -22,7 +22,8 @@ public class Turma {
         int somaMeninos = 0;
         final String sexoM = "Masculino";
         for (Crianca umaCrianca : listaCriancas) {
-            if (umaCrianca.getSexo().equals(sexoM) == true) {
+            String sexoCrianca = umaCrianca.getSexo();
+            if (sexoCrianca.equals(sexoM)) {
                 somaMeninos++;
             }
         }
