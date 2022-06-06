@@ -1,5 +1,7 @@
+import java.util.ArrayList;
+
 public class Pedido {
-    private Arraylist<Produto> listaProdutos;
+    private Arraylist<Produto> listaProdutos = new ArrayList<>();
 
     public Arraylist<Produto> getListaProdutos() {
         return listaProdutos;
@@ -43,6 +45,6 @@ public class Pedido {
         pedido1.getListaProdutos().add(prod4);
 
         float guardaValor = pedido1.calcSomaProdutos();
-        System.out.println(guardaValor);
+        System.out.printf("O valor do pedido é R$ %.2f.", guardaValor);
     }
 }
