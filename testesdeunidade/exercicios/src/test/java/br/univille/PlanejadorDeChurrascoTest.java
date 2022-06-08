@@ -1,8 +1,7 @@
-package test.java.br.univille;
+package br.univille;
 
-import java.beans.Transient;
-
-import main.java.br.univille.PlanejadorDeChurrasco;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.Test;
 
 public class PlanejadorDeChurrascoTest {
     

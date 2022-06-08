@@ -1,4 +1,4 @@
-package main.java.br.univille;
+package br.univille;
 
 public class PlanejadorDeChurrasco {
     private int adultos;
