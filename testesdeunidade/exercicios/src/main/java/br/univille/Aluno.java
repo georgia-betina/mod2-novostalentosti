@@ -6,11 +6,9 @@ public class Aluno {
     private String nome;
     private float percentualDeFrequencia;
     private ArrayList<Avaliacao> listaNotas = new ArrayList<>();
-    private float calculaMedia;
-
-    public float calculaMedia() {
+    private float calculaMedia() {
         float somaNotas = 0;
-        this.calculaMedia = 0;
+        float calculaMedia = 0;
             for (Avaliacao umaAvaliacao : listaNotas) {
             somaNotas += umaAvaliacao.getNota();
         }
@@ -40,7 +38,7 @@ public class Aluno {
     }
 
     public boolean estaEmExame() {
-        if (this.calculaMedia >= 3 && this.calculaMedia < 7 && percentualDeFrequencia >= 75) {
+        if (calculaMedia() >= 3 && calculaMedia() < 7 && percentualDeFrequencia >= 75) {
             return true;
         } else {
             return false;
@@ -48,7 +46,7 @@ public class Aluno {
     }
 
     public boolean estaAprovado() {
-        if (this.calculaMedia >= 7 && percentualDeFrequencia >= 75) {
+        if (calculaMedia() >= 7 && percentualDeFrequencia >= 75) {
             return true;
         } else {
             return false;
@@ -56,7 +54,7 @@ public class Aluno {
     }
 
     public boolean estaReprovado() {
-        if (this.calculaMedia < 3 || percentualDeFrequencia < 75) {
+        if (calculaMedia() < 3 || percentualDeFrequencia < 75) {
             return true;
         } else {
             return false;
